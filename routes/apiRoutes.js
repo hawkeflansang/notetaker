@@ -8,6 +8,9 @@ var connection = require('../db/connection');
 router.get('/path/name/here', function(req, res) {
   // TODO: Create connection query to retrieve all notes from MySQL database
   // https://www.npmjs.com/package/mysql#performing-queries
+  conn.query("Select * from notes;", function (err, res) {
+    if (err) console.log(err);
+  })
 });
 
 // POST uses data passed on req.body to create a new note in the database
